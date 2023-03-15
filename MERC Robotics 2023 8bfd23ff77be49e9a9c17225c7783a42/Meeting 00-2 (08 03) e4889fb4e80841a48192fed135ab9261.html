@@ -1,0 +1,671 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Meeting 00-2 (08/03)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="e4889fb4-e808-41a4-8192-fed135ab9261" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">😅</span></div><h1 class="page-title">Meeting 00-2 (08/03)</h1></header><div class="page-body"><h1 id="cdd87903-b991-49d4-87e1-034559e6aa7c" class=""><details open=""><summary><mark class="highlight-teal">Project initiation and project plan</mark></summary></details></h1><div class="indented"><h2 id="7ab8681a-1e58-49f8-926d-c5ce812eaa47" class="">1.1. Meetings with project group</h2><p id="a0ff7db1-260c-4f61-b15e-c478c481aa0e" class="">1.1.1. Define the project phases and work packages</p><p id="c383f2a7-6473-479a-a5ba-fdea0c397d76" class="">1.1.2. Select project manager and work package leaders</p><h2 id="888ae191-ddb5-47eb-b7b5-085439dec73d" class="">1.2. Starting the project</h2><p id="89219afd-ebc3-4689-80ef-44e4fdc0c201" class="">1.2.1. Familiarize with the project topic</p><p id="275c394f-87cc-4cd3-b586-7c19330a86d4" class="">1.2.2. Setup project tools, workspaces and documents</p><h2 id="cd848ff9-d88c-4796-b4c3-61ba92b2e23b" class="">1.3. Project planning</h2><p id="41fbd53a-b872-470b-87c1-d185420bf3f1" class="">1.3.1. Research projects from previous years</p><p id="11543127-0e15-4783-b680-4462ba8310ca" class="">1.3.2. Write the project plan</p><p id="7759c2fa-baa2-4cc9-ab19-7a0d7d54bc23" class="">1.3.3. Define the schedule</p><h2 id="9937c3a6-76ba-4d2f-b597-e1225c266523" class="">1.4. Review the plan as a group </h2><p id="5e26f16e-001a-4395-8ac4-3fb8b8a1b3e0" class="">1.4.1. Project plan accepted</p></div><h1 id="aad765cf-3911-4853-a46b-ac8d16d5013c" class=""><details open=""><summary><mark class="highlight-blue">Data gathering</mark></summary></details></h1><div class="indented"><h2 id="4d07d9ae-2a50-455a-8db8-b516c25b6cd3" class="">2.1. Considering the possibilities</h2><p id="65cd02ab-d6d5-4550-99f5-86962caf09cb" class="">2.1.1. Self made</p><ul id="be7383bb-f397-4d40-b31c-f461227f476b" class="bulleted-list"><li style="list-style-type:disc">2.1.1.1. Modify current platform</li></ul><ul id="e8777d10-2dae-4e6b-9f36-6320e34a6d5a" class="bulleted-list"><li style="list-style-type:disc">2.1.1.2. Design a new platform</li></ul><p id="8cd77ce3-6c92-427e-a7cb-f81367ced386" class="">2.1.2. Suitable accessories on the market</p><h2 id="bd07cbb9-9b20-4cc0-bb43-65cb9387b214" class="">2.2. Defining work area</h2><p id="c066d074-dc3d-4f08-ac00-ab213924e63a" class="">2.2.1. Measurements</p><ul id="cdc25827-0000-4b09-9b3c-ef6edfb5f8ef" class="bulleted-list"><li style="list-style-type:disc">2.2.1.1. Needle robot</li></ul><ul id="3da99d69-5a36-4b26-a715-fda92696f716" class="bulleted-list"><li style="list-style-type:disc">2.2.1.2. Current platform</li></ul><ul id="26268690-056e-469e-b7a2-7fa89c05fdeb" class="bulleted-list"><li style="list-style-type:disc">2.2.1.3. Inverted microscope</li></ul><p id="8ea3280b-b3bd-45b5-98c4-ad0ee770b839" class="">2.2.2. Clarify the requirements for new platform</p><h2 id="6c50cb2c-604f-48a0-a32d-5e39867bc674" class="">2.3. Learning the skills and tools</h2><p id="62584b2c-cf42-421e-85fb-89ee66233e82" class="">2.3.1. Specify and learn to use the tools</p><ul id="db99e31a-62f4-40be-8101-2e9f33068f0a" class="bulleted-list"><li style="list-style-type:disc">2.3.1.1. CAD</li></ul><ul id="2c60720b-bde5-48f0-ad19-43bf303adba6" class="bulleted-list"><li style="list-style-type:disc">2.3.1.2. Programming</li></ul><ul id="f4b764d6-fadd-40a9-b4f6-97c865182a75" class="bulleted-list"><li style="list-style-type:disc">2.3.1.3. Testing</li></ul><p id="0b547c34-4e38-424b-a625-dab4b19616d0" class="">2.3.2. Learn more about the skills required to finish relevant work packages</p></div><h1 id="134d0bc2-7bac-4588-9b11-647ba056ff12" class=""><details open=""><summary><mark class="highlight-red">Design phase</mark></summary></details></h1><div class="indented"><h2 id="e8fc12a5-1ed4-4342-beaa-bfda30acfbf4" class="">3.1. Concept design</h2><p id="5bd61b9a-375b-4682-bafc-201eed5c4d48" class="">3.1.1. Brainstorming about concept ideas</p><p id="420d009e-c85d-4f62-8d2b-e75f22b0a2ea" class="">3.1.2. Changes to needle robots</p><p id="5d91cf1d-f94a-4766-bac2-3c8eff7c3c51" class="">3.1.3. Review designs and make new iterations</p><h2 id="93481647-ee41-4536-878f-6751fcd0eb5b" class="">3.2. Mechanical design</h2><p id="19fc813a-a98f-4c8e-b5f4-75266e6a37e9" class="">3.2.1. Platform mounting</p><p id="87839081-a2db-45d9-9678-dad80c4b7161" class="">3.2.2. Needle robot mounting</p><p id="a9e8fa0d-39a5-48af-850e-0db7d7ae91f9" class="">3.2.3. Actuator mounting</p><p id="df22968d-79f1-486d-8c7b-93d0d9427d6e" class="">3.2.4. Platform size and shape</p><p id="dbbfe6f7-34bb-4235-9180-5035ac890699" class="">3.2.5. Material selection</p><h2 id="8a66acd1-7464-460c-9158-6a54726f4f38" class="">3.3. Mechatronics design</h2><p id="5417eb30-3382-4fbe-9df2-5f5da39635a3" class="">3.3.1. Manual operation</p><p id="92c30010-70d9-48e7-97c7-09b04d91395c" class="">3.3.2. Motorized operation</p><p id="d30a2f50-e42e-4d3a-8790-0c9fa577f521" class="">3.3.3. Actuator selection</p><p id="6ce77760-c6fb-4ad4-9f80-568dbe1c9050" class="">3.3.4. Ranges of motion</p><p id="c3900d6f-6eed-47da-93b7-a24804e804e5" class="">3.3.5. Gears / tracks</p><h2 id="bc7624be-4e56-4e93-9734-ded54f772891" class="">3.4. Electronics design</h2><p id="97eb2215-1dcf-4fe1-9dff-a3fe57a7166e" class="">3.4.1. Actuator power supply</p><p id="f963c506-3727-4004-9d4c-5dfa87d82388" class="">3.4.2. Actuator control interface</p><p id="f29addc0-2e2e-4c54-a159-afccc1ce221e" class="">3.4.3. Robot wiring</p></div><h1 id="4ecbed53-76d0-4e1a-9dbc-0193ed9ba61d" class=""><details open=""><summary><mark class="highlight-purple">Prototyping and manufacturing</mark></summary></details></h1><div class="indented"><h2 id="a60653a2-d862-4a0c-88fd-9559b92d5374" class="">5.1. 3D-printing a prototype</h2><p id="14f797da-e2d3-48e1-bfec-0842885f9e44" class="">5.1.1. Learn more about 3D-printing</p><p id="67b959af-3cbe-4382-9a63-284d459f9b32" class="">5.1.2. Make sure that the print quality is satisfactory</p><p id="c3e0ad81-9691-479f-8eed-3909e68883ec" class="">5.1.3. Test the prototype</p><p id="0d3113af-0470-4308-8ef7-863d87677929" class="">5.1.4. Collect feedback</p><p id="c2ef4abd-04e1-40d0-9182-eba76a1600f0" class="">5.1.5. Improve the design</p><p id="f5a201fd-1742-41d3-b85c-8196b60c1ae3" class="">5.1.6. Get acceptance for the final design</p><h2 id="fbc20548-9add-4dc9-978b-06c3b78f939f" class="">5.2. Manufacturing</h2><p id="261df95e-36f5-4e23-97d8-1b8a45622907" class="">5.2.1. Search and compare suitable manufacturers</p><p id="c2d17451-5a4e-4914-a0ef-5c845a167dc4" class="">5.2.2. Get acceptance and funding for manufacturing</p></div><h1 id="1a65936f-afd7-4201-b5ff-38e25bc494af" class=""><details open=""><summary><mark class="highlight-brown">Software implementation</mark></summary></details></h1><div class="indented"><h2 id="8f07fdad-5b4a-4381-86d9-f8b650967f66" class="">6.1. Support for second needle robot</h2><p id="2007abbb-5087-47c9-af30-e5cd69e4e6f4" class="">6.1.1. Modify the existing code to support second needle robot</p><p id="13426119-bcf0-44f5-b0e1-340ed3702851" class="">6.1.2. Unit test the software</p><h2 id="c90ba040-1ec5-48b2-a7b8-c27f982f8145" class="">6.2. Platform operation</h2><p id="6fee1e49-2669-42e5-822c-192e01f7b9a3" class="">6.2.1. Decide on operating method</p><p id="8fd4cc53-3e68-4018-8f1a-197067cb8a76" class="">6.2.2. Implement the operating method</p><p id="a9c69719-55d6-4137-a1d4-cd2597d3ec6c" class="">6.2.3. Unit test the software</p><h2 id="57618078-fa66-4be7-9b04-e8f4c334b768" class="">6.3. Collision prevention</h2><p id="24611b0f-110b-4fe2-9cef-d034a721bae0" class="">6.3.1. Collisions between needle robots</p><p id="36aba299-ef9e-40fe-91ec-8c866f83f86e" class="">6.3.2. Collisions between needle robots and environment</p><p id="cd34a442-e41b-450b-a62a-2b12ab9474fd" class="">6.3.3. Unit test the software</p><h2 id="3f6c3fb7-67ed-401c-955d-6736b6de6a19" class="">6.4. Finalizing the software</h2><p id="a0ff2822-f27d-4dc1-b9b8-f299c848dd4a" class="">6.4.1. Perform integration tests for the system</p><p id="ecd0b9bc-5a97-464e-8b97-3e0c3461ba61" class="">6.4.2. Make sure that the system is on the level of expected output</p><p id="8b8fa6af-6273-452b-8ce4-87946708c64c" class="">6.4.3. Get acceptance for the finished system</p></div><h1 id="b4717505-d93c-451c-b58d-592d2430fd05" class=""><details open=""><summary><mark class="highlight-gray">Project closing and final report</mark></summary></details></h1><div class="indented"><h2 id="1f2f4019-9efb-4646-94ad-fcb22db43467" class="">7.1. Documentation throughout the project</h2><p id="9bcaf0b6-670a-4019-9c12-18386ab44688" class="">7.1.1. Prepare and put together notes from project meetings and phases</p><p id="e6100373-59e5-4ce8-b335-e22bb7ccf6ba" class="">7.1.2. Pictures of the initial state, project phases and finished product</p><h2 id="41b42ce6-8f24-4097-9a2b-65532d897dc5" class="">7.2. Final gala</h2><p id="c36aa54a-0eb9-47d0-b033-e1bf74d6df2b" class="">7.2.1. Create a poster</p><p id="ff06ca3c-7881-43fe-b76e-ac0d1a31cb06" class="">7.2.2. Prepare for the gala</p><p id="c39ccc46-5847-4baf-8b7d-1ed8354d34f5" class="">7.2.3. Give presentation</p><h2 id="6f16ec30-f725-4f26-9e03-00ea2f846c2b" class="">7.3. Project report</h2><p id="3225b1e6-c964-4649-a384-6be9ea489c57" class="">7.3.1. Write the report</p><ul id="62f3f459-d5e3-4261-9191-9d897be67605" class="bulleted-list"><li style="list-style-type:disc">7.3.1.1. Write everything from learning objectives to finished product</li></ul><ul id="04e8cee8-a3a2-4046-a68d-c7cf0272842c" class="bulleted-list"><li style="list-style-type:disc">7.3.1.2. Project plan and business report as appendixes</li></ul><p id="0d8a6fa7-736d-4ed2-959f-2c8c09cd734f" class="">
+</p></div><p id="4baf373d-dbc4-49c4-9ed3-5b46e45371b2" class="">
+</p></div></article></body></html>

@@ -1,0 +1,670 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>What wheels should my robot use?</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="135bb7f7-9acd-426b-beb6-564ac669b538" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="https://www.notion.so/icons/steering-wheel_brown.svg"/></div><h1 class="page-title">What wheels should my robot use?</h1></header><div class="page-body"><p id="4af7bda0-04d7-4118-b8db-79426bf3ed47" class="">Designing a mobile robot and wondering what wheels (and how many) you should incorporate? You&#x27;ve come to the right place. </p><p id="6553f6b0-602e-4e65-b5ae-3a56333b489d" class="">Mobile wheeled or tracked robots have a minimum of two motors which are used to propel and steer the robot. </p><p id="311cf5a5-95c8-44ec-a931-51cd4d75aac6" class="">Hobbyists tend to choose skid steering (like a tank) because of its simplicity to design, incorporate and control. </p><p id="d994d316-b880-4df3-8395-4eb0e9af7ffb" class="">A three wheeled robot’s third (rear) wheel usually prevents the robot from falling over. </p><p id="faeaa777-41eb-4b16-9e3f-28d74050aaec" class="">Four wheeled robots have either two or four drive motors and use skid steering. </p><p id="20d00575-c408-46d3-8946-02d9b85d2c9a" class="">Six wheeled robots most commonly have either two, four or six drive motors. </p><p id="858f23fa-6d0a-4f95-82b9-bcf38d12c9dc" class="">Individuals who use an R/C car as a basis for their robot use rack and pinion steering where one motor is connected to a drive train and the other (usually a servo motor) is used for steering. </p><p id="f70e0ce1-c970-466e-ac79-be3ad250bbaa" class="">Increasing the number of drive motors helps the robot to climb steeper inclines by increasing the torque.</p><figure id="a629e9b5-f51c-41e2-b9c3-f83aa0d288fc" class="image"><a href="What%20wheels%20should%20my%20robot%20use%20135bb7f79acd426bbeb6564ac669b538/Untitled.png"><img style="width:350px" src="What%20wheels%20should%20my%20robot%20use%20135bb7f79acd426bbeb6564ac669b538/Untitled.png"/></a><figcaption>Adding “idle” wheels (wheels not connected to a motor) often has the unfortunate consequence of removing weight from the drive wheels resulting in slip and loss of traction. In the image below, the center wheel, chosen mistakenly as the driven wheel, often loses contact with the ground. The way around this is to add suspension.</figcaption></figure><p id="8e22b4e6-e82e-4b86-b532-79907803a83b" class="">A track system (or linking all wheels with gears or drive belts) also helps to prevent this from occurring. Tracks are not necessarily a better choice than using multiple driven wheels. Military tank manufacturers around the world produce both wheeled and tracked tank models and both offer comparable performance. Most users agree that tank tracks look more intimidating, they are far from being a refined method of transportation and have a tendency to &quot;tear up&quot; the ground beneath them. When making a tight turn, or turning on spot, tank treads encounter significantly more resistance than wheels as both halves are pushed against the ground perpendicularly to the turning radius.</p><h1 id="d711036f-f541-4a3c-8a82-5a9a20c6e24f" class="block-color-pink">Common types of wheeled robots</h1><h3 id="4e75ce5b-825d-4efc-a1d4-979343a5333c" class="">Skid steering (using 2, 4 or 6 wheels)</h3><p id="98060efc-8468-4cae-a440-4603826eca5a" class="">You can make a self-balancing robot using two wheels, or a more stable platform using four or more.</p><div id="e27f32fd-7c1a-4a18-94da-7d3428d3ac1f" class="column-list"><div id="e238b11f-0a2b-43c0-9836-4faac507a5dd" style="width:25%" class="column"><figure id="e8bc7c52-50b2-431d-a23c-c093cd119e5b" class="image"><a href="https://community.robotshop.com/uploads/c/b/cbenson/imported/lynxmotion-predator-6-wheel-sumo-kit-no-electronics-sr2-kt-T.jpg"><img src="https://community.robotshop.com/uploads/c/b/cbenson/imported/lynxmotion-predator-6-wheel-sumo-kit-no-electronics-sr2-kt-T.jpg"/></a></figure></div><div id="150a5db2-30ce-48e1-b2cb-7a327de7b5a3" style="width:25%" class="column"><figure id="82365452-08e8-4027-a912-cff709ece547" class="image"><a href="https://community.robotshop.com/uploads/c/b/cbenson/imported/coroware-explorer-ex-w-linux-T.jpg"><img src="https://community.robotshop.com/uploads/c/b/cbenson/imported/coroware-explorer-ex-w-linux-T.jpg"/></a></figure></div><div id="c27d6399-29fe-4ce0-9390-4a81f55efd54" style="width:25%" class="column"><figure id="a300e8c0-a95e-49ca-a1d6-6a3e0146773f" class="image"><a href="https://community.robotshop.com/uploads/c/b/cbenson/imported/dagu-4wd-thumper-mobile-platform-aluminum-T.jpg"><img src="https://community.robotshop.com/uploads/c/b/cbenson/imported/dagu-4wd-thumper-mobile-platform-aluminum-T.jpg"/></a></figure></div><div id="c9c87f6e-0461-4942-91e7-a5435e5dd1fe" style="width:25%" class="column"><figure id="4cd0b80f-287b-4c52-bb5e-f38fc20abcc0" class="image"><a href="https://community.robotshop.com/uploads/c/b/cbenson/imported/dagu-wild-thumper-6wd-all-terrain-chassis-T.jpg"><img src="https://community.robotshop.com/uploads/c/b/cbenson/imported/dagu-wild-thumper-6wd-all-terrain-chassis-T.jpg"/></a></figure></div></div><h3 id="8b901d0f-2a5a-4831-9a9d-318ba6ad73bf" class="">2 driven wheels + one or two idler wheels</h3><p id="f1cc8341-49d6-4508-adc3-c45c75bec0aa" class="">The two drive wheels are used to propel and turn the robot (skid steering) and the one or two idler wheels to prevent the robot from falling forward or backward. The &quot;idler&quot; wheel can be a caster, a ball or omniwheel.</p><div id="3107e034-3f17-47e0-9ef8-ffb7dda4939b" class="column-list"><div id="c49ee62a-e919-4ad6-ac0c-f6ab00962d43" style="width:25%" class="column"><figure id="0a69ed26-5608-472e-a77d-f33b19141ce7" class="image"><a href="https://community.robotshop.com/uploads/c/b/cbenson/imported/parallax-scribbler-2-robot-T.jpg"><img src="https://community.robotshop.com/uploads/c/b/cbenson/imported/parallax-scribbler-2-robot-T.jpg"/></a></figure></div><div id="d2e5d252-358f-45e7-9f7d-41eb9b38340e" style="width:25%" class="column"><figure id="e3d1e285-7042-4900-86ae-28ecd738a936" class="image"><a href="https://community.robotshop.com/uploads/c/b/cbenson/imported/robodyssey-mouse-basic-kit.jpg"><img src="https://community.robotshop.com/uploads/c/b/cbenson/imported/robodyssey-mouse-basic-kit.jpg"/></a></figure></div><div id="d483685e-6d90-496d-92c3-831c7957c426" style="width:25%" class="column"><figure id="ba272655-d7ab-487e-9c6e-d8402f516b49" class="image"><a href="https://community.robotshop.com/uploads/c/b/cbenson/imported/dagu-2wd-beginner-robot-chassis-v2-T.jpg"><img src="https://community.robotshop.com/uploads/c/b/cbenson/imported/dagu-2wd-beginner-robot-chassis-v2-T.jpg"/></a></figure></div><div id="a6cf39f9-9e80-4c6b-bdf5-e395a5246987" style="width:25%" class="column"><figure id="35beaea6-3a72-4b7f-9180-2d200abbc3a5" class="image"><a href="https://community.robotshop.com/uploads/c/b/cbenson/imported/2wd-beginner-robot-chassis-T.jpg"><img src="https://community.robotshop.com/uploads/c/b/cbenson/imported/2wd-beginner-robot-chassis-T.jpg"/></a></figure></div></div><h3 id="717953cf-b51d-49da-a7ef-2d0c3a0c3cb6" class="">Omniwheels</h3><p id="decd9a70-bf99-4057-abb9-47088d05aa20" class="">Usually have three arranged in a triangular pattern, or four arranged at 90 degrees. Omniwheels have small free-spinning roller wheels on the outside diameter. The central wheel is usually driven. This allows the wheel to be driven forward but slip sideways.</p><div id="4ebaf3d9-5313-46c9-a560-4287f59d8f55" class="column-list"><div id="ad562b5c-aaa1-4719-9193-b289334fef5a" style="width:25%" class="column"><figure id="cc5608b0-9bd4-4f5a-86da-9ab76d6c67e9" class="image"><a href="https://community.robotshop.com/uploads/c/b/cbenson/imported/omni-directional-mobile-robot-base-T.jpg"><img src="https://community.robotshop.com/uploads/c/b/cbenson/imported/omni-directional-mobile-robot-base-T.jpg"/></a></figure></div><div id="d3010fd0-ab59-4d4e-a3ff-76bb658934f2" style="width:25%" class="column"><figure id="815a7980-4772-4b99-952d-a81a3addf704" class="image"><a href="https://community.robotshop.com/uploads/c/b/cbenson/imported/4wd-omni-directional-mobile-robot-kit-T.jpg"><img src="https://community.robotshop.com/uploads/c/b/cbenson/imported/4wd-omni-directional-mobile-robot-kit-T.jpg"/></a></figure></div><div id="d672f587-1879-4522-bea9-dbd88b1df8e0" style="width:25%" class="column"><figure id="8cf74daf-0645-45ae-849f-1dcdfa9fc5fe" class="image"><a href="https://community.robotshop.com/uploads/c/b/cbenson/imported/3wd-omni-directional-arduino-mobile-robot-kit-T.jpg"><img src="https://community.robotshop.com/uploads/c/b/cbenson/imported/3wd-omni-directional-arduino-mobile-robot-kit-T.jpg"/></a></figure></div><div id="192c0004-513d-447f-815c-311099c3be76" style="width:25%" class="column"><figure id="b8b48b82-372c-448a-a5d5-19f8e45de5b1" class="image"><a href="https://community.robotshop.com/uploads/c/b/cbenson/imported/dagu-mr-tydi-mobile-robot-gripper-T.jpg"><img src="https://community.robotshop.com/uploads/c/b/cbenson/imported/dagu-mr-tydi-mobile-robot-gripper-T.jpg"/></a></figure></div></div><h3 id="5379ebbb-31fb-4692-9b9b-1c219047544c" class="">Mecanum</h3><p id="c7cb6bf1-483a-4754-b923-032d8a8e9a26" class="">These currently need two pairs of specific wheels arranged two left and 2 right. Each wheel pulls the robot at an angle instead of purely forward and as such, you can get a variety of additional motion above and beyond that of a normal 4WD robot.</p><div id="415c61fd-2872-4860-80a2-7cbf86ca5f49" class="column-list"><div id="dd3bb0ed-46d7-4cd8-a828-7d56fa4d19e2" style="width:25%" class="column"><figure id="eecd51e7-c4be-4e8e-b1e4-3d1e829cd438" class="image"><a href="https://community.robotshop.com/uploads/c/b/cbenson/imported/4wd-meccanum-driven-omnidirectional-r-c-robot-kit-T.jpg"><img src="https://community.robotshop.com/uploads/c/b/cbenson/imported/4wd-meccanum-driven-omnidirectional-r-c-robot-kit-T.jpg"/></a></figure></div><div id="025fa45a-1931-4147-b166-3707f8a77fbe" style="width:25%" class="column"><figure id="b656ab85-4000-44bd-8230-781369483240" class="image"><a href="https://community.robotshop.com/uploads/c/b/cbenson/imported/dfrobotshop-rover-20-arduino-mecanum-robot-basic-T.jpg"><img src="https://community.robotshop.com/uploads/c/b/cbenson/imported/dfrobotshop-rover-20-arduino-mecanum-robot-basic-T.jpg"/></a></figure></div><div id="c300f4a3-ab5a-4b84-9352-c909af3c1d3f" style="width:25%" class="column"><figure id="3c90dcdd-523a-4036-96ac-0e810c9c7121" class="image"><a href="https://community.robotshop.com/uploads/c/b/cbenson/imported/4wd-arduino-compatible-mecanum-robot-kit-T.jpg"><img src="https://community.robotshop.com/uploads/c/b/cbenson/imported/4wd-arduino-compatible-mecanum-robot-kit-T.jpg"/></a></figure></div><div id="c6884d9e-0807-4814-8155-4b6983532f30" style="width:25%" class="column"><figure id="5dee0ae1-fa81-4689-9a0a-3f294c6f1538" class="image"><a href="https://community.robotshop.com/uploads/c/b/cbenson/imported/4wd-arduino-compatible-basic-mecanum-robot-T.jpg"><img src="https://community.robotshop.com/uploads/c/b/cbenson/imported/4wd-arduino-compatible-basic-mecanum-robot-T.jpg"/></a></figure></div></div><h3 id="2cb19cac-496d-4484-861d-9cf9e583b0b0" class="">Tri-Star Design</h3><p id="06cd50bb-6cbf-4533-82f7-c4757f82ae1e" class="">A variant on the &quot;wheel&quot; design would be the tri-star. This design places three wheels of equal diameter about the axis of rotation. Normally these wheels are all driven via pulley from a centra shaft. It an be argued that the added complexity of this design allows it to more easily overcome large obstacles. Not many robots incorporate this design as of yet.</p><figure id="317f8e8a-0d94-447f-84de-69cd8448c4b8" class="image"><a href="https://community.robotshop.com/uploads/c/b/cbenson/imported/tri-star-300x127.jpg"><img src="https://community.robotshop.com/uploads/c/b/cbenson/imported/tri-star-300x127.jpg"/></a></figure><h1 id="b99a3b5c-10d0-47d5-b952-30f7646905e7" class="block-color-teal">Large vs Small Wheels</h1><p id="3b059040-697a-42ea-aefb-a6adcd9a732c" class="">Robots with large wheels are often more eye-catching than robots with small wheels, but don&#x27;t let looks affect your design! The right wheel size is very important and care should be taken to choose the right one for each specific robot.Two main equations need to be considered:</p><p id="5e00ca72-3da7-4301-a184-1ce47ce30e6f" class="">(forward) velocity = angular velocity (of the wheel) x radius (of the wheel)</p><p id="2bf20001-29d6-458b-a702-df480b0f51b5" class="">This means that both the radius of the wheel and the angular speed at which it&#x27;s turning will affect the forward velocity.</p><p id="f00890d1-3e97-4862-bbf1-6414ddf78acd" class="">force (exerted by the wheel on the surface) = torque (of the motor) / radius (of the wheel)</p><p id="12d4102b-407b-49bc-97fb-60a0a40ef6f7" class="">For a wheeled robot to move or climb an incline, the wheel exerts a horizontal force on the surface. If you need to exert a high force (because your robot is heavy), then you need to increase either the torque or decrease the radius of the wheel. Increasing the torque is usually expensive, and increasing the radius usually means a heavier wheel, requiring more torque, but also reducing the maximum speed (since they have to rotate faster). Very small wheel diameters may also be impractical.</p><h1 id="22ca8ecf-8d21-4e86-9a26-aedae08d62f0" class="block-color-blue">Tread Type</h1><p id="c04258de-8ccf-4349-a9b5-4b164d2d349f" class="">Choosing the right grip is all about maximizing the contact area. If your robot will be travelling on a ceramic or wood floor, a flat t rubber tire will provide the most grip, since both surfaces are very flat. If you also want it to roll on carpet, then you might add a small tread, but nothing too deep. At the opposite extreme, if you want your robot to get through deep mud and dirt, you would choose a tire with deep grooves to &quot;scoop&quot; the mud away to move forward.</p><p id="d71ef9bd-6a9b-4483-99ae-12c4261b5fa3" class="">What happens when you use a tire with a deep tread on a flat surface? There is almost no contact between the tire and the floor, so it&#x27;s a lot easier for the tire to lose traction. What about a flat tire in the mud? There&#x27;s certainly a lot of contact, but without a &quot;shovel&quot; effect, the wheel will just spin in place.</p><p id="2419c895-9250-4645-836f-4b7ddde93d7b" class="">
+</p></div></article></body></html>
