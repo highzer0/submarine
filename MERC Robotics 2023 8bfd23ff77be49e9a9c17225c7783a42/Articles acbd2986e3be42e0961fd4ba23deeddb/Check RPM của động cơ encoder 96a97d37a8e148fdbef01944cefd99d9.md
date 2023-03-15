@@ -4,7 +4,7 @@
 
 **Encoder B** (sometimes labeled C2) will determine if the motor is moving forward or in reverse.
 
-![mạch check rpm động cơ encoder.png](Check RPM/mch_check_rpm_ng_c_encoder.png)
+[mạch check rpm động cơ encoder.png](Check RPM/mch_check_rpm_ng_c_encoder.png)
 
 ```arduino
 /*
